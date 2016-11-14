@@ -11,6 +11,9 @@ import Foundation
 
 class SecureData : NSObject {
     
+    var publicKey : SecKey?
+    var privateKey : SecKey?
+    
     override init() {
         super.init()
         
@@ -19,11 +22,10 @@ class SecureData : NSObject {
     func createKeyPair() {
         
         var statusCode : OSStatus
-        var publicKey : SecKey?
-        var privateKey : SecKey?
+
         
-        let publicKeyAttr : [NSObject : Any] = [kSecAttrIsPermanent: true as NSObject, kSecAttrApplicationTag:"publicTag".data(using: .utf8)! as Any]
-        let privateKeyAttr : [NSObject : Any] = [kSecAttrIsPermanent: true as NSObject, kSecAttrApplicationTag:"privateTag".data(using: .utf8)! as Any]
+        let publicKeyAttr : [NSString : AnyObject] = [kSecAttrIsPermanent: true as AnyObject, kSecAttrApplicationTag:"publicTag".data(using: .utf8)! as AnyObject]
+        let privateKeyAttr : [NSString : AnyObject] = [kSecAttrIsPermanent: true as AnyObject, kSecAttrApplicationTag:"privateTag".data(using: .utf8)! as AnyObject]
         
         
         var keyPairAttr = [NSObject : NSObject]()
@@ -44,6 +46,30 @@ class SecureData : NSObject {
         }
     }
     
-    
+    func encryptData(stringToEncrypt : String) {
+        
+        
+        var statusCode : OSStatus
+        
+        let stringEnc = stringToEncrypt
+        
+        let stringEncData = [UInt8](stringEnc.utf8)
+        
+        let stringEncDataLength = UInt(stringEnc.characters.count)
+        
+        let blockSize = SecKeyGetBlockSize(self.publicKey!)
+        
+        var messageEncrypted = [UInt8](repeating: 0, count: blockSize)
+        
+        var messageEncryptedSize = blockSize
+        
+        var result = SecKeyEncrypt(publicKey!, SecPadding.PKCS1, stringEncData, Int(stringEncDataLength), &messageEncrypted, &messageEncryptedSize)
+        
+        if result != noErr {
+            print("Encryption Error")
+        
+        }
+       
+    }
     
 }

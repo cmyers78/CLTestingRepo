@@ -16,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C68A005E1DD9E76F00B6DBB9 /* EncDecTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EncDecTest.entitlements; sourceTree = "<group>"; };
 		C6BE86891DD601DE00AC013E /* EncDecTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EncDecTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6BE868C1DD601DE00AC013E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6BE868E1DD601DE00AC013E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +57,7 @@
 		C6BE868B1DD601DE00AC013E /* EncDecTest */ = {
 			isa = PBXGroup;
 			children = (
+				C68A005E1DD9E76F00B6DBB9 /* EncDecTest.entitlements */,
 				C6BE868C1DD601DE00AC013E /* AppDelegate.swift */,
 				C6BE868E1DD601DE00AC013E /* ViewController.swift */,
 				C6BE869E1DD6023A00AC013E /* SecureData.swift */,
@@ -101,6 +103,11 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = XYW89PFS48;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -263,6 +270,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = EncDecTest/EncDecTest.entitlements;
 				DEVELOPMENT_TEAM = XYW89PFS48;
 				INFOPLIST_FILE = EncDecTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -276,6 +284,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = EncDecTest/EncDecTest.entitlements;
 				DEVELOPMENT_TEAM = XYW89PFS48;
 				INFOPLIST_FILE = EncDecTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -304,6 +313,7 @@
 				C6BE869D1DD601DE00AC013E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
