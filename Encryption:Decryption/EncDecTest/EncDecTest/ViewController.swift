@@ -17,8 +17,8 @@ class ViewController: UIViewController {
         let keyFunction = SecureData()
         
         keyFunction.createKeyPair()
-        keyFunction.encryptData(stringToEncrypt: "Get Lit Whit...")
-        keyFunction.decryptData(messageEncrypted: keyFunction.encToDec!, messageEncryptedSize: keyFunction.encToDecSize!)
+        let answer = keyFunction.encryptData(stringToEncrypt: "Get Lit Whit...")
+        keyFunction.decryptData(messageEncrypted: answer.0, messageEncryptedSize: answer.1)
         
     }
 

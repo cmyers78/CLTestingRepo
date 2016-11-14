@@ -50,10 +50,10 @@ class SecureData : NSObject {
         }
     }
     
-    func encryptData(stringToEncrypt : String)  {
+    func encryptData(stringToEncrypt : String) -> ([UInt8], Int)  {
         
         
-        var statusCode : OSStatus
+        //var statusCode : OSStatus
         
         let stringEnc = stringToEncrypt
         
@@ -67,7 +67,7 @@ class SecureData : NSObject {
         
         var messageEncryptedSize = blockSize
         
-        var result = SecKeyEncrypt(publicKey!, SecPadding.PKCS1, stringEncData, Int(stringEncDataLength), &messageEncrypted, &messageEncryptedSize)
+        let result = SecKeyEncrypt(publicKey!, SecPadding.PKCS1, stringEncData, Int(stringEncDataLength), &messageEncrypted, &messageEncryptedSize)
         
         if result != noErr {
             print("Encryption Error")
@@ -80,6 +80,9 @@ class SecureData : NSObject {
             self.encToDecSize = messageEncryptedSize
             print(result)
         }
+        
+        return (messageEncrypted, messageEncryptedSize)
+        
     }
     
     func decryptData(messageEncrypted : [UInt8], messageEncryptedSize : Int) {
