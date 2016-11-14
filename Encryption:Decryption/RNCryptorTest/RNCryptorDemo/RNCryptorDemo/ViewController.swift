@@ -1,12 +1,13 @@
 //
 //  ViewController.swift
-//  EncDecTest
+//  RNCryptorDemo
 //
-//  Created by Christopher Myers on 11/11/16.
+//  Created by Christopher Myers on 11/14/16.
 //  Copyright © 2016 Dragoman Developers, LLC. All rights reserved.
 //
 
 import UIKit
+import SwiftyRSA
 
 class ViewController: UIViewController {
 
@@ -14,13 +15,16 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let keyFunction = SecureData()
         
-        keyFunction.createKeyPair()
-        keyFunction.encryptData(stringToEncrypt: "Get Lit Whit...")
+        
+        
+        
     }
 
-    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
 
 
 }

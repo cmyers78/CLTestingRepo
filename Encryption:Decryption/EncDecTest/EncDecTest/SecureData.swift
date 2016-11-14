@@ -14,6 +14,8 @@ class SecureData : NSObject {
     var publicKey : SecKey?
     var privateKey : SecKey?
     
+    var encToDec : [UInt8]?
+    
     override init() {
         super.init()
         
@@ -68,8 +70,20 @@ class SecureData : NSObject {
         if result != noErr {
             print("Encryption Error")
         
+        } else {
+            print("here comes the result...get lit whitney!")
+            
+            print(messageEncrypted)
+            self.encToDec = messageEncrypted
+            print(result)
         }
        
+    }
+    
+    func decryptData(intToDecrypt : UInt8) {
+        
+        
+        
     }
     
 }
