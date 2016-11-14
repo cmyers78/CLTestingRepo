@@ -15,6 +15,8 @@ class SecureData : NSObject {
     var privateKey : SecKey?
     
     var encToDec : [UInt8]?
+    var encToDecSize : Int?
+    
     
     override init() {
         super.init()
@@ -48,7 +50,7 @@ class SecureData : NSObject {
         }
     }
     
-    func encryptData(stringToEncrypt : String) {
+    func encryptData(stringToEncrypt : String)  {
         
         
         var statusCode : OSStatus
@@ -75,12 +77,36 @@ class SecureData : NSObject {
             
             print(messageEncrypted)
             self.encToDec = messageEncrypted
+            self.encToDecSize = messageEncryptedSize
             print(result)
         }
-       
     }
     
-    func decryptData(intToDecrypt : UInt8) {
+    func decryptData(messageEncrypted : [UInt8], messageEncryptedSize : Int) {
+        
+        let intDec = messageEncrypted
+        let intDecSize = messageEncryptedSize
+        
+        
+        
+        // turn int To Decrypt into data??
+        
+        var messageDecryptedBlockSize = SecKeyGetBlockSize(self.privateKey!)
+        
+        var messageDecrypted = [UInt8](repeating: 0, count: messageDecryptedBlockSize)
+        
+        let result = SecKeyDecrypt(self.privateKey!, SecPadding.PKCS1, intDec, intDecSize, &messageDecrypted, &messageDecryptedBlockSize)
+        
+        if result != noErr {
+            print("Decryption Error")
+        } else {
+            print(messageDecrypted)
+            print(result)
+            let decryptedText = String(bytes: messageDecrypted, encoding: .utf8)
+            print(decryptedText!)
+            
+        }
+        
         
         
         

@@ -18,6 +18,8 @@ class ViewController: UIViewController {
         
         keyFunction.createKeyPair()
         keyFunction.encryptData(stringToEncrypt: "Get Lit Whit...")
+        keyFunction.decryptData(messageEncrypted: keyFunction.encToDec!, messageEncryptedSize: keyFunction.encToDecSize!)
+        
     }
 
     
