@@ -42,6 +42,8 @@ class SecureData : NSObject {
         
         if statusCode == noErr && publicKey != nil && privateKey != nil {
             print("Key pair generate OK")
+            print()
+            print("These are the public and private keys")
             print("Public Key: \(publicKey!)")
             print("Private Key: \(privateKey!)")
             
@@ -73,7 +75,7 @@ class SecureData : NSObject {
             print("Encryption Error")
         
         } else {
-            print("here comes the result...get lit whitney!")
+            print("here comes the encrypted result...")
             
             print(messageEncrypted)
             self.encToDec = messageEncrypted
@@ -103,9 +105,10 @@ class SecureData : NSObject {
         if result != noErr {
             print("Decryption Error")
         } else {
-            print(messageDecrypted)
-            print(result)
+            //print(messageDecrypted)
+            //print(result)
             let decryptedText = String(bytes: messageDecrypted, encoding: .utf8)
+            print("Here comes the decrypted text: ")
             print(decryptedText!)
             
         }
