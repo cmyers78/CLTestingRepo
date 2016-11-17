@@ -11,66 +11,68 @@ import UIKit
 class ViewController: UIViewController {
 
     var firstView : UIView?
+    var firstFrame : CGRect?
+    var secondView : UIView?
+    var secondFrame : CGRect?
+    var intersectView : UIView?
+    var intersectFrame : CGRect?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("View is appearing")
         
         let view = self.view.frame
         
-        let firstFrame = CGRect(x: view.origin.x, y: view.origin.y, width: (view.width/2), height: (view.height/2))
+        self.firstFrame = CGRect(x: view.origin.x, y: view.origin.y, width: (view.width/2), height: (view.height/2))
         
-        self.firstView = UIView(frame: firstFrame)
+        self.firstView = UIView(frame: firstFrame!)
         firstView?.backgroundColor = UIColor.darkGray
         
         
         self.view.addSubview(firstView!)
         
-        let secondFrame = CGRect(x: (firstView?.frame.maxX)!, y: (firstView?.frame.minY)!, width: (view.width/2), height: (view.height/2))
+        self.secondFrame = CGRect(x: (firstView?.frame.maxX)!, y: (firstView?.frame.minY)!, width: (view.width/2), height: (view.height/2))
         
-        let secondView = UIView(frame: secondFrame)
-        secondView.backgroundColor = UIColor.blue
-        self.view.addSubview(secondView)
+        self.secondView = UIView(frame: secondFrame!)
+        secondView?.backgroundColor = UIColor.blue
+        self.view.addSubview(secondView!)
         
-        let intersectFrame = CGRect(x: view.origin.x, y: view.origin.y + 25, width: 75, height: 200)
-        let intersectView = UIView(frame: intersectFrame)
-        intersectView.backgroundColor = UIColor.brown
-        self.view.addSubview(intersectView)
+        self.intersectFrame = CGRect(x: view.origin.x, y: view.origin.y + 25, width: 75, height: 200)
+        self.intersectView = UIView(frame: intersectFrame!)
+        intersectView?.backgroundColor = UIColor.brown
+        self.view.addSubview(intersectView!)
         
-        self.animateTheRect(intersectView: intersectView)
-        
-        let testing = firstFrame.intersects(secondFrame)
-//        if testing == true {
-//            print("These intersect")
-//            
-//        } else {
-//            print("No intersection")
-//            let nonintersectFrame = CGRect(x: 110, y: 120, width: 200, height: 400)
-//            let nonintersectView = UIView(frame: nonintersectFrame)
-//            nonintersectView.backgroundColor = UIColor.yellow
-//            self.view.addSubview(nonintersectView)
-//        }
-        
-        // Do any additional setup after loading the view, typically from a nib.
+        self.animateTheRect(intersectView: intersectView!)
+        //self.checkForIntersect()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+
 
     func animateTheRect(intersectView : UIView) {
         let rectViewSpeed = 18.0/view.frame.size.width
         let duration = (view.frame.size.width - intersectView.frame.origin.x) * rectViewSpeed
         UIView.animate(withDuration: TimeInterval(duration), delay: 0.0, options: .curveLinear, animations: {
-            
-            
-            
-            
             intersectView.frame.origin.x = self.view.frame.size.width
+            self.checkForIntersect()
         }, completion: {_ in
             intersectView.frame.origin.x = -intersectView.frame.size.width
+            //self.checkForIntersect()
+            
             self.animateTheRect(intersectView: intersectView)
         })
+    }
+    
+    func checkForIntersect() {
+        if self.intersectFrame?.intersects(self.firstFrame!) == true {
+            firstView?.backgroundColor = UIColor.cyan
+        } else {
+            firstView?.backgroundColor = UIColor.darkGray
+        }
+        
     }
 
 
