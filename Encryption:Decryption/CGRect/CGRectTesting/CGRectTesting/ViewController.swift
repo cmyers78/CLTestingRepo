@@ -55,25 +55,62 @@ class ViewController: UIViewController {
     func animateTheRect(intersectView : UIView) {
         let rectViewSpeed = 18.0/view.frame.size.width
         let duration = (view.frame.size.width - intersectView.frame.origin.x) * rectViewSpeed
-        UIView.animate(withDuration: TimeInterval(duration), delay: 0.0, options: .curveLinear, animations: {
-            intersectView.frame.origin.x = self.view.frame.size.width
-            self.checkForIntersect()
-        }, completion: {_ in
-            intersectView.frame.origin.x = -intersectView.frame.size.width
-            //self.checkForIntersect()
-            
-            self.animateTheRect(intersectView: intersectView)
-        })
+        UIView.animate(withDuration: TimeInterval(duration),
+                       delay: 0.0,
+                       options: .curveLinear,
+                       animations: {
+                        intersectView.frame.origin.x = self.view.frame.size.width
+                        self.checkForIntersect()
+                        print(rectViewSpeed)
+                        print(duration)
+                        //self.checkForIntersectSecondFrame()
+                        let data = intersectView.layer.presentation()?.frame
+                        print("here comes the data: \(data)")
+
+                    },
+                       completion: {_ in
+                        intersectView.frame.origin.x = -intersectView.frame.size.width
+                        self.firstView?.backgroundColor = UIColor.darkGray
+                        self.secondView?.backgroundColor = UIColor.blue
+                        self.animateTheRect(intersectView: intersectView)
+                    })
     }
     
     func checkForIntersect() {
-        if self.intersectFrame?.intersects(self.firstFrame!) == true {
-            firstView?.backgroundColor = UIColor.cyan
+        var intersectX = Int((self.intersectView?.center.x)!)
+        print(intersectX)
+        let firstViewX = Int((self.firstView?.center.x)!)
+        let data = intersectView?.layer.presentation()?.frame
+        print("here comes the data: \(data)")
+        
+        if intersectX < firstViewX {
+            self.firstView?.backgroundColor = UIColor.darkGray
         } else {
-            firstView?.backgroundColor = UIColor.darkGray
+            self.firstView?.backgroundColor = UIColor.cyan
         }
         
+        print(intersectX)
+        print(firstViewX)
+        print()
+        print()
+        
+//        while intersectX < firstViewX {
+//            firstView?.backgroundColor = UIColor.cyan
+//            print("Intersect X value is : \(intersectX)")
+//        }
+        
+//        if intersectX < firstViewX {
+//            firstView?.backgroundColor = UIColor.darkGray
+//            print(self.intersectView?.bounds.minX as Any)
+//        }
     }
+//    func checkForIntersectSecondFrame() {
+//        if self.intersectFrame?.intersects(self.secondFrame!) == true {
+//            secondView?.backgroundColor = UIColor.red
+//            firstView?.backgroundColor = UIColor.darkGray
+//        }
+//        
+//    }
 
 
 }
