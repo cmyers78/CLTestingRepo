@@ -12,6 +12,7 @@ class InactivityTimer: NSObject {
     
     var seconds : Int = 0
     var myTimer : Timer?
+    let notification = NotificationCenter.default
     
     override init() {
         super.init()
@@ -38,20 +39,34 @@ class InactivityTimer: NSObject {
             self.seconds = 0
             self.runTimer()
         }
-        
     }
     
     func runTimer() {
         myTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: {_ in
             self.track()
         })
-        
-        
     }
+    
     func invalidateTimer() {
         myTimer?.invalidate()
         self.seconds = 0
     }
     
+    func createNotificationToStopTimer() {
+        notification.addObserver(self, selector: #selector(invalidateTimer), name: NSNotification.Name(rawValue: "postNotificationToStopTimer"), object: nil)
+    }
+    
+    func createListenerToStopTimer() {
+        notification.post(name: NSNotification.Name(rawValue: "postNotificationToStopTimer"), object: nil)
+    }
+    
+    func createNotificationToStartTimer() {
+        notification.addObserver(self, selector: #selector(runTimer), name: NSNotification.Name(rawValue: "postNotificationToStartTimer"), object: nil)
+    }
+    
+    func createListenerToStartTimer() {
+        notification.post(name: NSNotification.Name(rawValue: "postNotificationToStartTimer"), object: nil)
+        
+    }
 
 }
