@@ -48,5 +48,10 @@ class InactivityTimer: NSObject {
         
         
     }
+    func invalidateTimer() {
+        myTimer?.invalidate()
+        self.seconds = 0
+    }
+    
 
 }
