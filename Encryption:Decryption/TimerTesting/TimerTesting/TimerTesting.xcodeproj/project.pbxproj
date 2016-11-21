@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C61EA4F41DE3465C00F0EEAA /* InactivityTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61EA4F31DE3465C00F0EEAA /* InactivityTimer.swift */; };
 		C64DC3411DE32BBC00BE886E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64DC3401DE32BBC00BE886E /* AppDelegate.swift */; };
 		C64DC3431DE32BBC00BE886E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64DC3421DE32BBC00BE886E /* ViewController.swift */; };
 		C64DC3461DE32BBC00BE886E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C64DC3441DE32BBC00BE886E /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C61EA4F31DE3465C00F0EEAA /* InactivityTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InactivityTimer.swift; sourceTree = "<group>"; };
 		C64DC33D1DE32BBC00BE886E /* TimerTesting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimerTesting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C64DC3401DE32BBC00BE886E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C64DC3421DE32BBC00BE886E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			children = (
 				C64DC3401DE32BBC00BE886E /* AppDelegate.swift */,
 				C64DC3421DE32BBC00BE886E /* ViewController.swift */,
+				C61EA4F31DE3465C00F0EEAA /* InactivityTimer.swift */,
 				C64DC3441DE32BBC00BE886E /* Main.storyboard */,
 				C64DC3471DE32BBC00BE886E /* Assets.xcassets */,
 				C64DC3491DE32BBC00BE886E /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C64DC3431DE32BBC00BE886E /* ViewController.swift in Sources */,
+				C61EA4F41DE3465C00F0EEAA /* InactivityTimer.swift in Sources */,
 				C64DC3411DE32BBC00BE886E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,6 +304,7 @@
 				C64DC3511DE32BBC00BE886E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
