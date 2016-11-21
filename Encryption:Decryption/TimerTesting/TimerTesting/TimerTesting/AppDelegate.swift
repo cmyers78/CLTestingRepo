@@ -39,6 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
         print("Stopping Timer")
         myTimer.invalidateTimer()
+        myTimer.createNotificationToStartTimer()
         //send notice to restart the timer on ViewController
         
         

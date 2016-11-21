@@ -17,12 +17,14 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        newTimer.runTimer()
+        newTimer.createNotificationToStopTimer()
+        
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-       newTimer.runTimer()
-       newTimer.createNotificationToStopTimer()
+        newTimer.createListenerToStartTimer()
     }
     
 
