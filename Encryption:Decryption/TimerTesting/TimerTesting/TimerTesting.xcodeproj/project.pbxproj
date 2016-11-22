@@ -13,6 +13,7 @@
 		C64DC3461DE32BBC00BE886E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C64DC3441DE32BBC00BE886E /* Main.storyboard */; };
 		C64DC3481DE32BBC00BE886E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C64DC3471DE32BBC00BE886E /* Assets.xcassets */; };
 		C64DC34B1DE32BBC00BE886E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C64DC3491DE32BBC00BE886E /* LaunchScreen.storyboard */; };
+		C6E4FE311DE4A0AF00C42E86 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E4FE301DE4A0AF00C42E86 /* SecondViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		C64DC3471DE32BBC00BE886E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C64DC34A1DE32BBC00BE886E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C64DC34C1DE32BBC00BE886E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C6E4FE301DE4A0AF00C42E86 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				C64DC3401DE32BBC00BE886E /* AppDelegate.swift */,
 				C64DC3421DE32BBC00BE886E /* ViewController.swift */,
+				C6E4FE301DE4A0AF00C42E86 /* SecondViewController.swift */,
 				C61EA4F31DE3465C00F0EEAA /* InactivityTimer.swift */,
 				C64DC3441DE32BBC00BE886E /* Main.storyboard */,
 				C64DC3471DE32BBC00BE886E /* Assets.xcassets */,
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6E4FE311DE4A0AF00C42E86 /* SecondViewController.swift in Sources */,
 				C64DC3431DE32BBC00BE886E /* ViewController.swift in Sources */,
 				C61EA4F41DE3465C00F0EEAA /* InactivityTimer.swift in Sources */,
 				C64DC3411DE32BBC00BE886E /* AppDelegate.swift in Sources */,

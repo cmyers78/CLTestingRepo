@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("New Timer Running")
         newTimer.runTimer()
         newTimer.createNotificationToStopTimer()
         
@@ -24,9 +25,15 @@ class ViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        newTimer.createListenerToStartTimer()
+        //newTimer.createListenerToStartTimer()
     }
     
-
+    
+    @IBAction func moveOnTapped(_ sender: UIButton) {
+        newTimer.invalidateTimer()
+        performSegue(withIdentifier: "timerSegue", sender: nil)
+        
+        
+    }
 }
 

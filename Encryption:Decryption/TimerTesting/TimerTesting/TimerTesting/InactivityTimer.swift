@@ -32,7 +32,7 @@ class InactivityTimer: NSObject {
         if self.seconds == 8 {
             print("About to reset timer...")
         }
-        else if self.seconds == 10 {
+        else if self.seconds == 20 {
             print("Resetting timer")
             self.myTimer?.invalidate()
             print("you took too long fuckwad")
