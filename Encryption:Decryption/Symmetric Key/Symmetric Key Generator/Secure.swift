@@ -50,7 +50,7 @@ class Secure: NSObject {
             self.decArray = try aes.decrypt(cipherToDecrypt)
             
             self.decString = String(bytes: self.decArray!, encoding: .utf8)
-            print(self.decString ?? "Couldn't decrypt to String")
+            //print(self.decString ?? "Couldn't decrypt to String")
             
         } catch {
             print("decryption with CryptoSwift failed")
