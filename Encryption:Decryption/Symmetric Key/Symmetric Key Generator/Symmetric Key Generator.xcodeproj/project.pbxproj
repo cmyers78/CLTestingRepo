@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		85DF7680AFB3517737348A19 /* Pods_Symmetric_Key_Generator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C38BCC9DAF343F71D99DA67 /* Pods_Symmetric_Key_Generator.framework */; };
+		C6299E891DE5EA1D00C4C369 /* Secure.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6299E881DE5EA1D00C4C369 /* Secure.swift */; };
 		C68234EF1DE4D11C00855FF3 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68234EE1DE4D11C00855FF3 /* CryptoSwift.framework */; };
 		C6E4FE3F1DE4B4B400C42E86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E4FE3E1DE4B4B400C42E86 /* AppDelegate.swift */; };
 		C6E4FE411DE4B4B400C42E86 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E4FE401DE4B4B400C42E86 /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		8C38BCC9DAF343F71D99DA67 /* Pods_Symmetric_Key_Generator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Symmetric_Key_Generator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F7CBAE25A02F635821C31A8 /* Pods-Symmetric Key Generator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Symmetric Key Generator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Symmetric Key Generator/Pods-Symmetric Key Generator.debug.xcconfig"; sourceTree = "<group>"; };
+		C6299E881DE5EA1D00C4C369 /* Secure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Secure.swift; path = ../Secure.swift; sourceTree = "<group>"; };
 		C68234EE1DE4D11C00855FF3 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/Symmetric_Key_Generator-fyfcwpirzzvzuocebxnvjrjricog/Build/Products/Debug-iphonesimulator/CryptoSwift/CryptoSwift.framework"; sourceTree = "<group>"; };
 		C6E4FE3B1DE4B4B400C42E86 /* Symmetric Key Generator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Symmetric Key Generator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6E4FE3E1DE4B4B400C42E86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 			children = (
 				C6E4FE3E1DE4B4B400C42E86 /* AppDelegate.swift */,
 				C6E4FE401DE4B4B400C42E86 /* ViewController.swift */,
+				C6299E881DE5EA1D00C4C369 /* Secure.swift */,
 				C6E4FE421DE4B4B400C42E86 /* Main.storyboard */,
 				C6E4FE451DE4B4B400C42E86 /* Assets.xcassets */,
 				C6E4FE471DE4B4B400C42E86 /* LaunchScreen.storyboard */,
@@ -217,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6E4FE411DE4B4B400C42E86 /* ViewController.swift in Sources */,
+				C6299E891DE5EA1D00C4C369 /* Secure.swift in Sources */,
 				C6E4FE3F1DE4B4B400C42E86 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
