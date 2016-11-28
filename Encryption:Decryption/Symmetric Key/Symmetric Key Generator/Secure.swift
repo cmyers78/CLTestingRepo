@@ -8,6 +8,7 @@
 
 import UIKit
 import CryptoSwift
+import Foundation
 
 
 class Secure: NSObject {
@@ -31,7 +32,7 @@ class Secure: NSObject {
             self.encArray = ciperText
             
             
-            print(ciperText)
+            //print(ciperText)
 //            print(decrypted)
 //            let result = String(bytes: decrypted, encoding: .utf8)
             //print(result ?? String())
