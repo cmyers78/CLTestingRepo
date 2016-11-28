@@ -14,6 +14,7 @@ class InactivityTimer: NSObject {
     var myTimer : Timer?
     let notification = NotificationCenter.default
     
+    
     override init() {
         super.init()
     }
@@ -38,6 +39,7 @@ class InactivityTimer: NSObject {
             print("you took too long fuckwad")
             self.seconds = 0
             self.runTimer()
+            
         }
     }
     
