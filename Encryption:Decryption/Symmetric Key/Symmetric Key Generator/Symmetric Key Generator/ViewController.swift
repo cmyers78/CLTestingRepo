@@ -8,6 +8,7 @@
 
 import UIKit
 import CryptoSwift
+import Security
 
 class ViewController: UIViewController {
     
@@ -17,6 +18,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         let text = "The forebearing use of power does not only form a touchstone but the manner in which a gentleman has advantages over others is the test of a true gentleman."
+        //let str = kSecAttrKeyClassSymmetric
         
 //        do {
 //            let aes = try AES(key: "passwordpassword", iv: "drowssapdrowssap")
@@ -36,12 +38,14 @@ class ViewController: UIViewController {
         
         
         // Do any additional setup after loading the view, typically from a nib.
+        print("The message to be encoded: \(text)")
+        print()
         
         let newSecure = Secure()
         
         let newEnc = newSecure.secureEncrypt(stringToEncrypt: text)
         let newDec = newSecure.secureDecrypt(cipherToDecrypt: newEnc)
-        
+        print()
         print("Here is your message: \(newDec)")
         
     }
