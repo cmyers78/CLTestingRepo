@@ -21,11 +21,15 @@ class ViewController: UIViewController {
         newTimer.runTimer()
         newTimer.createNotificationToStopTimer()
         
+        
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         //newTimer.createListenerToStartTimer()
+        if newTimer.seconds == 5 {
+            print("preparing for segue")
+        }
     }
     
     

@@ -1,0 +1,6 @@
+framework module Pods_Symmetric_Key_Generator {
+  umbrella header "Pods-Symmetric Key Generator-umbrella.h"
+
+  export *
+  module * { export * }
+}
