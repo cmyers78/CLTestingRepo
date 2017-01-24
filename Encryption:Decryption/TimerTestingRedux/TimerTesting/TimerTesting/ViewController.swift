@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         
         
         
-        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(inactiveSubmit), userInfo: nil, repeats: false)
+        timer = Timer.scheduledTimer(timeInterval: 50, target: self, selector: #selector(inactiveSubmit), userInfo: nil, repeats: false)
         
         // Do any additional setup after loading the view, typically from a nib.
     }
