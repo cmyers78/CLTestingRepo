@@ -37,6 +37,8 @@ class SecondVCViewController: UIViewController {
         print("Updated Realm")
         print(model.first?.state ?? "None Given")
         print(model.last?.state ?? "None Given")
+        print(model.first?.name)
+        print(model.last?.name)
     
         secondLabel.text = model.last?.name
         // Do any additional setup after loading the view.
