@@ -32,16 +32,17 @@ let number = 93
 func decimalConversion(decimalNumber : Int, base : Int) -> Int {
     var quotient = decimalNumber
     var conversion = 0
-    var arr = [Int]()
+    var quotientArray = [Int]()
     while quotient > 0 {
         let remainder = quotient % base
-        arr.insert(remainder, at: 0)
+        quotientArray.append(remainder)
         quotient /= base
     }
-    for i in arr {
+    for i in quotientArray.reversed() {
         conversion = conversion * 10 + i
     }
     return conversion
 }
 
+decimalConversion(decimalNumber: 93, base: 8)
 
