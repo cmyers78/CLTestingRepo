@@ -46,3 +46,15 @@ func decimalConversion(decimalNumber : Int, base : Int) -> Int {
 
 decimalConversion(decimalNumber: 93, base: 8)
 
+let dateString = "Mar 9, 2017 4:20 PM"
+var formatter = DateFormatter()
+formatter.dateFormat = "MMM d, yyyy h:mm a"
+
+let dateObject = formatter.date(from: dateString)
+let unixPrevious = dateObject?.timeIntervalSince1970
+let currentTime = Date()
+let unix = currentTime.timeIntervalSince1970
+
+let laterTimer = Date()
+
+print("Unix difference: \(unix - unixPrevious!)")
