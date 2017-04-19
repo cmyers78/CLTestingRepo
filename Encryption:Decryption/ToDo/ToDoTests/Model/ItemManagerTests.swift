@@ -37,7 +37,7 @@ class ItemManagerTests: XCTestCase {
     }
     
     func test_addItem_IncreasesToDoCountToOne() {
-        sut.addItem(ToDoItem(title: ""))
+        sut.add(ToDoItem(title: ""))
         
         XCTAssertEqual(sut.toDoCount, 1)
     }
@@ -45,12 +45,59 @@ class ItemManagerTests: XCTestCase {
     func test_itemAt_AfterAddingAnItem_ReturnsThatItem() {
         
         let item = ToDoItem(title: "Foo")
-        sut.addItem(item)
+        sut.add(item)
         
         let returnedItem = sut.item(at: 0)
         
         XCTAssertEqual(returnedItem.title, item.title)
     }
     
+    func test_CheckItemAt_ChangesCounts() {
+        sut.add(ToDoItem(title: ""))
+        
+        sut.checkItem(at: 0)
+        
+        XCTAssertEqual(sut.toDoCount, 0)
+        XCTAssertEqual(sut.doneCount, 1)
+    }
+    
+    func test_CheckItemAt_RemovesItFromToDoItems() {
+        let first = ToDoItem(title: "First")
+        let second = ToDoItem(title: "Second")
+        
+        sut.add(first)
+        sut.add(second)
+        
+        sut.checkItem(at: 0)
+        
+        XCTAssertEqual(sut.item(at: 0).title, "Second")
+    }
+    
+    func test_DoneItemAt_ReturnsCheckedItem() {
+        let item = ToDoItem(title: "Foo")
+        sut.add(item)
+        
+        sut.checkItem(at: 0)
+        
+        let returnedItem = sut.doneItem(at: 0)
+        
+        XCTAssertEqual(returnedItem.title, item.title
+        )
+    }
+    
+    func test_EqualItems_AreEqual() {
+        let first = ToDoItem(title: "Foo")
+        let second = ToDoItem(title: "Foo")
+        
+        XCTAssertEqual(first, second)
+        
+    }
+    
+    func test_Items_WhenLocationDiffers_AreNotEqual() {
+        let first = ToDoItem(title: "", location: Location(name: "Foo"))
+        let second = ToDoItem(title: "", location: Location(name: "Bar"))
+        
+        XCTAssertNotEqual(first, second)
+    }
     
 }
