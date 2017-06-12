@@ -25,12 +25,21 @@ class ItemListDataProviderTests: XCTestCase {
     
     var sut : ItemListDataProvider!
     var tableView : UITableView!
+    var controller : ItemsListViewController!
+    
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
         sut = ItemListDataProvider()
         sut.itemManager = ItemManager()
-        tableView = UITableView()
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        controller = storyboard.instantiateViewController(withIdentifier: "ItemListViewController") as! ItemsListViewController
+        
+        // called to ensure that the tableview is not nil
+        _ = controller.view
+        
+        tableView = controller.tableView
         tableView.dataSource = sut
         
     }
@@ -88,17 +97,22 @@ class ItemListDataProviderTests: XCTestCase {
     }
     
     func test_CellForRow_DequeuesCellFromTableView() {
+        // create a mock of a TableView
         let mockTableView = MockTableView()
-        mockTableView.dataSource = sut
         
+        // set Data Source from ItemList Data Provider
+        mockTableView.dataSource = sut
+        // register the cell
         mockTableView.register(ItemCell.self, forCellReuseIdentifier: "ItemCell")
         
+        // add item to ItemManager array
         sut.itemManager?.add(ToDoItem(title: "Foo"))
         mockTableView.reloadData()
         
+        // locate data from specific row and section
         _ = mockTableView.cellForRow(at: IndexPath(row: 0, section: 0))
         
-        
+        // check to see if dequeueCell was called is true
         XCTAssertTrue(mockTableView.cellGotDequeued)
     }
 }
