@@ -14,6 +14,8 @@
 		C63E49AC1E6D9BAD00EC44C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C63E49AB1E6D9BAD00EC44C1 /* Assets.xcassets */; };
 		C63E49AF1E6D9BAD00EC44C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C63E49AD1E6D9BAD00EC44C1 /* LaunchScreen.storyboard */; };
 		C63E49B71E6D9C5500EC44C1 /* SecondVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63E49B61E6D9C5500EC44C1 /* SecondVCViewController.swift */; };
+		C68AD2B81F910EF000699A74 /* SecondRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68AD2B71F910EF000699A74 /* SecondRealmModel.swift */; };
+		C6989FCC1F94EBE0008DCD35 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6989FCB1F94EBE0008DCD35 /* ThirdViewController.swift */; };
 		C6C90BAF1E6D9F2B00B86425 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C90BAE1E6D9F2B00B86425 /* RealmModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +29,8 @@
 		C63E49AE1E6D9BAD00EC44C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C63E49B01E6D9BAD00EC44C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C63E49B61E6D9C5500EC44C1 /* SecondVCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondVCViewController.swift; sourceTree = "<group>"; };
+		C68AD2B71F910EF000699A74 /* SecondRealmModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondRealmModel.swift; sourceTree = "<group>"; };
+		C6989FCB1F94EBE0008DCD35 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		C6C90BAE1E6D9F2B00B86425 /* RealmModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		C6D978137A7B8D0985E25C67 /* Pods_RealmPlayground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RealmPlayground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E45E9CA1FFF2722BD2278989 /* Pods-RealmPlayground.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmPlayground.release.xcconfig"; path = "Pods/Target Support Files/Pods-RealmPlayground/Pods-RealmPlayground.release.xcconfig"; sourceTree = "<group>"; };
@@ -76,7 +80,9 @@
 				C63E49A41E6D9BAD00EC44C1 /* AppDelegate.swift */,
 				C63E49A61E6D9BAD00EC44C1 /* ViewController.swift */,
 				C6C90BAE1E6D9F2B00B86425 /* RealmModel.swift */,
+				C68AD2B71F910EF000699A74 /* SecondRealmModel.swift */,
 				C63E49B61E6D9C5500EC44C1 /* SecondVCViewController.swift */,
+				C6989FCB1F94EBE0008DCD35 /* ThirdViewController.swift */,
 				C63E49A81E6D9BAD00EC44C1 /* Main.storyboard */,
 				C63E49AB1E6D9BAD00EC44C1 /* Assets.xcassets */,
 				C63E49AD1E6D9BAD00EC44C1 /* LaunchScreen.storyboard */,
@@ -220,7 +226,9 @@
 			files = (
 				C63E49B71E6D9C5500EC44C1 /* SecondVCViewController.swift in Sources */,
 				C6C90BAF1E6D9F2B00B86425 /* RealmModel.swift in Sources */,
+				C68AD2B81F910EF000699A74 /* SecondRealmModel.swift in Sources */,
 				C63E49A71E6D9BAD00EC44C1 /* ViewController.swift in Sources */,
+				C6989FCC1F94EBE0008DCD35 /* ThirdViewController.swift in Sources */,
 				C63E49A51E6D9BAD00EC44C1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

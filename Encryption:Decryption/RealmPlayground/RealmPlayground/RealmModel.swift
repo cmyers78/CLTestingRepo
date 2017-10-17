@@ -14,5 +14,6 @@ class RealmModel : Object {
     dynamic var name = String()
     dynamic var age = Int()
     dynamic var state = String()
+    dynamic var second : SecondRealmModel? = nil
     
 }

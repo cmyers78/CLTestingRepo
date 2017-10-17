@@ -18,32 +18,31 @@ class SecondVCViewController: UIViewController {
         let realm2 = try! Realm()
         
         let model = realm2.objects(RealmModel.self)
-        print("First object")
-        print(model.first?.name ?? "Undefined")
-        print(model.first?.age ?? 0)
-        print(model.first?.state ?? "Not given")
-        print(model.last?.state ?? "Not Given")
+        
+        let mod = SecondRealmModel()
+        mod.faveFood = "Chicken"
+        mod.faveLanguage = "Russian"
+        mod.faveTeam = "Bulldogs"
         
         print("updating Realm")
         try! realm2.write {
-            model.first?.state = "Georgia"
-            model.last?.state = "Argentina"
+            if let modelOne = model.last {
+                modelOne.second = SecondRealmModel()
+                modelOne.second?.faveFood = "Chicken"
+                modelOne.second?.faveTeam = "Georgia"
+                
+            }
         }
-        
-        print("Last object")
-        print(model.last?.name ?? "Undefined")
-        print(model.last?.age ?? 0)
-        
-        print("Updated Realm")
-        print(model.first?.state ?? "None Given")
-        print(model.last?.state ?? "None Given")
-        print(model.first?.name)
-        print(model.last?.name)
-    
+
+
         secondLabel.text = model.last?.name
         // Do any additional setup after loading the view.
     }
 
 
+    @IBAction func thirdButton(_ sender: Any) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "thirdVC") as! ThirdViewController
+        present(vc, animated: true, completion: nil)
+    }
 
 }

@@ -39,11 +39,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        
+        Timer.scheduledTimer(timeInterval: 8, target: self, selector: #selector(redrawImage), userInfo: nil, repeats: false)
+        Timer.scheduledTimer(timeInterval: 15, target: self, selector: #selector(redo), userInfo: nil, repeats: false)
     }
     
+    func redrawImage() {
+        objectImage1.frame = CGRect(x: 50, y: 100, width: view.frame.width * 0.10, height: view.frame.width * 0.10)
+    }
     
+    func redo() {
+        objectImage1.frame = CGRect(x: 200, y: 250, width: view.frame.width * 0.10, height: view.frame.width * 0.10)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

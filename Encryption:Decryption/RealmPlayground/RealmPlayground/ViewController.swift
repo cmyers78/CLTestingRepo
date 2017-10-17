@@ -21,16 +21,14 @@ class ViewController: UIViewController {
         user1.age = 38
         user1.state = "North Carolina"
         
-        let user2 = RealmModel()
-        
-        user2.name = "TataMartino"
-        user2.age = 62
-        
         let realm = try! Realm()
         try! realm.write {
             realm.add(user1)
-            realm.add(user2)
+
         }
+        
+        print("Screen One user model : \(user1)")
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
