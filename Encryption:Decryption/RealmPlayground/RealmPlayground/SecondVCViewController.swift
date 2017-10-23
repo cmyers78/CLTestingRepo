@@ -27,6 +27,7 @@ class SecondVCViewController: UIViewController {
         print("updating Realm")
         try! realm2.write {
             if let modelOne = model.last {
+                // modelOne.secon = mod
                 modelOne.second = SecondRealmModel()
                 modelOne.second?.faveFood = "Chicken"
                 modelOne.second?.faveTeam = "Georgia"
