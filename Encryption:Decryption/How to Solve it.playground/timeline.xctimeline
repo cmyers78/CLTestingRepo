@@ -3,8 +3,18 @@
    version = "3.0">
    <TimelineItems>
       <LoggerValueHistoryTimelineItem
-         documentLocation = "#CharacterRangeLen=45&amp;CharacterRangeLoc=151&amp;EndingColumnNumber=43&amp;EndingLineNumber=6&amp;StartingColumnNumber=5&amp;StartingLineNumber=6&amp;Timestamp=511449431.921126"
+         documentLocation = "file:///Users/christophermyers/Developer/CLTestingRepo/Encryption:Decryption/How%20to%20Solve%20it.playground#CharacterRangeLen=45&amp;CharacterRangeLoc=151&amp;EndingColumnNumber=0&amp;EndingLineNumber=7&amp;StartingColumnNumber=5&amp;StartingLineNumber=6&amp;Timestamp=530628543.067527"
          selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/christophermyers/Developer/CLTestingRepo/Encryption:Decryption/How%20to%20Solve%20it.playground#CharacterRangeLen=9&amp;CharacterRangeLoc=755&amp;EndingColumnNumber=22&amp;EndingLineNumber=36&amp;StartingColumnNumber=13&amp;StartingLineNumber=36&amp;Timestamp=530628543.06766"
+         selectedRepresentationIndex = "2"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "file:///Users/christophermyers/Developer/CLTestingRepo/Encryption:Decryption/How%20to%20Solve%20it.playground#CharacterRangeLen=6&amp;CharacterRangeLoc=1345&amp;EndingColumnNumber=10&amp;EndingLineNumber=59&amp;StartingColumnNumber=4&amp;StartingLineNumber=59&amp;Timestamp=530628543.067758"
+         selectedRepresentationIndex = "2"
          shouldTrackSuperviewWidth = "NO">
       </LoggerValueHistoryTimelineItem>
    </TimelineItems>

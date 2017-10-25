@@ -46,15 +46,20 @@ func decimalConversion(decimalNumber : Int, base : Int) -> Int {
 
 decimalConversion(decimalNumber: 93, base: 8)
 
-let dateString = "Mar 9, 2017 4:20 PM"
-var formatter = DateFormatter()
-formatter.dateFormat = "MMM d, yyyy h:mm a"
-
-let dateObject = formatter.date(from: dateString)
-let unixPrevious = dateObject?.timeIntervalSince1970
-let currentTime = Date()
-let unix = currentTime.timeIntervalSince1970
-
-let laterTimer = Date()
-
-print("Unix difference: \(unix - unixPrevious!)")
+func findSquareRoot(of number : Double) -> Double {
+    var guessOne = number / 2.0
+    var guessTwo = 1.0
+    let marginOfError = 0.0001
+    
+   // print(abs(guessOne - guessTwo))
+    
+    while abs(guessOne - guessTwo) > marginOfError {
+        guessTwo = guessOne
+        guessOne = (guessOne + (number / guessOne)) / 2
+    }
+    return round(guessOne * 10000) / 10000
+}
+findSquareRoot(of: 50)
+findSquareRoot(of: 36)
+findSquareRoot(of: 81)
+findSquareRoot(of: 225)

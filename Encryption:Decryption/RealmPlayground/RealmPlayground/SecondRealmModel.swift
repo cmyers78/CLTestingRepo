@@ -11,9 +11,9 @@ import RealmSwift
 
 class SecondRealmModel : Object {
     
-    dynamic var faveTeam = String()
-    dynamic var faveFood = String()
-    dynamic var faveLanguage = String()
+    @objc dynamic var faveTeam = String()
+    @objc dynamic var faveFood = String()
+    @objc dynamic var faveLanguage = String()
     
     
 }

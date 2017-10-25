@@ -11,9 +11,9 @@ import RealmSwift
 
 class RealmModel : Object {
     
-    dynamic var name = String()
-    dynamic var age = Int()
-    dynamic var state = String()
-    dynamic var second : SecondRealmModel? = nil
+    @objc dynamic var name = String()
+    @objc dynamic var age = Int()
+    @objc dynamic var state = String()
+    @objc dynamic var second : SecondRealmModel? = nil
     
 }
